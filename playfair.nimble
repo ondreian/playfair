@@ -6,7 +6,6 @@ description   = "Playfair encryption implementation"
 license       = "MIT"
 srcDir        = "src"
 binDir        = "lib"
-description   = "JSON loading test"
 bin           = "playfair"
 
 [Deps]
