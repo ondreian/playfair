@@ -9,7 +9,8 @@ before_install:
         export branch=devel
     fi
     apt-get update
-    apt-get install libpcre3 libpcre3-dev
+    apt-get install libpcre3 
+    apt-get install libpcre3-dev
 install:
   - |
     if [ ! -x nim-master/bin/nim ]; then
