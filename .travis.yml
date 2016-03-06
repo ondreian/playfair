@@ -25,6 +25,8 @@ install:
     nim c -r src/nimble install
     export PATH=nimble/bin:$PATH"
     cd ..
+    which nimble
+    ls
 
 before_script:
   - nimble install
