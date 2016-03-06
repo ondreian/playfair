@@ -8,27 +8,25 @@ before_install:
         export branch=devel
     fi
 install:
-  - |
-    cat ~/.profile
-    git clone -b $branch --depth 1 git://github.com/nim-lang/nim nim-$branch/
-    cd nim-$branch
-    git clone -b $branch --depth 1 git://github.com/nim-lang/csources csources/
-    cd csources
-    sh build.sh
-    cd ..
-    rm -rf csources
-    bin/nim c koch
-    ./koch boot -d:release
-    export PATH="nim-$branch/bin:$PATH"
-    cd ..
-    git clone --depth 1 https://github.com/nim-lang/nimble.git nimble/
-    cd nimble
-    ls
-    nim c -r src/nimble install
-    export PATH=nimble/bin:$PATH"
-    cd ..
-    which nimble
-    ls
+  -cat ~/.profile
+  -git clone -b $branch --depth 1 git://github.com/nim-lang/nim nim-$branch/
+  -cd nim-$branch
+  -git clone -b $branch --depth 1 git://github.com/nim-lang/csources csources/
+  -cd csources
+  -sh build.sh
+  -cd ..
+  -rm -rf csources
+  -bin/nim c koch
+  -./koch boot -d:release
+  -export PATH="nim-$branch/bin:$PATH"
+  -cd ..
+  -git clone --depth 1 https://github.com/nim-lang/nimble.git nimble/
+  -cd nimble
+  -nim c -r src/nimble install
+  -export PATH="nimble/bin:$PATH"
+  -cd ..
+  -which nimble
+  -ls
 
 before_script:
   - $(which nimble) install
