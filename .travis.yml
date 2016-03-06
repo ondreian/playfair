@@ -27,6 +27,7 @@ install:
     cd ..
 
 before_script:
+  - echo $PATH
   - nimble install
 script: nim c --run ./tests/test.nim
 
