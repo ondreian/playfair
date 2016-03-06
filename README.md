@@ -10,5 +10,6 @@ var plaintext = cipher.decrypt
 
 It is meant to be a learning example, and perhaps useful for some crypto challenges.  Checkout the source for the other options:
 
-  1) I or J vs Q
+  1) Option: make I || J occupy the same space versus dropping Q
+
   2) Pad/Drop duplicates with X

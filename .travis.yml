@@ -24,7 +24,7 @@ install:
     nim c -r nimble/src/nimble install
 
 before_script:
-  - nimble update
+  - nimble refresh
   - nimble install
 script: nim c --run ./tests/test.nim
 
