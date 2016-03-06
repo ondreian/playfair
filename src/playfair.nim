@@ -4,9 +4,7 @@ import docopt
 
 import "utils/string/betterString"
 import "utils/string/bigram"
-import "utils/string/ngram"
 import "utils/passphrase"
-import "utils/analyzer"
 
 const X = 'X'
 
