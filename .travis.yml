@@ -9,8 +9,7 @@ before_install:
     fi
 install:
   - |
-    cat .profile
-    rm .profile
+    cat ~/.profile
     git clone -b $branch --depth 1 git://github.com/nim-lang/nim nim-$branch/
     cd nim-$branch
     git clone -b $branch --depth 1 git://github.com/nim-lang/csources csources/
