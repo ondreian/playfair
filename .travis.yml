@@ -1,4 +1,5 @@
 language: c
+dist: trusty
 before_install:
   - |
     # Test the master branch with Nim master and other branches with Nim devel
