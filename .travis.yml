@@ -25,6 +25,7 @@ install:
     nim c -r src/nimble install
     - export PATH=nimble/bin:$PATH"
     cd ..
+    
 before_script:
   - nimble install
 script: nim c --run ./tests/test.nim
