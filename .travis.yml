@@ -39,9 +39,7 @@ install:
     nim c -r nimble/src/nimble install
 
 before_script:
-  - |
-    nimble refresh <<< y
-  - nimble install
+  - nimble install <<< y
 script: nim c --run ./tests/test.nim
 
 cache:
