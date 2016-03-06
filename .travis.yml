@@ -25,9 +25,7 @@ install:
 
 before_script:
   - |
-    nimble refresh << ANSWERS 
-    y 
-    ANSWERS
+    nimble refresh <<< y
   - nimble install
 script: nim c --run ./tests/test.nim
 
