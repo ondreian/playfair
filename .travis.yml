@@ -22,15 +22,11 @@ install:
     cd ..
     git clone --depth 1 https://github.com/nim-lang/nimble.git nimble/
     cd nimble
-    ls
     nim c -r src/nimble install
-    export PATH="nimble/bin:$PATH"
     cd ..
-    which nimble
-    ls
 
 before_script:
-  - $(which nimble) install
+  - nimble install
 script: nim c --run ./tests/test.nim
 
 cache:
