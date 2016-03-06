@@ -22,3 +22,12 @@ install:
 before_script:
   - export PATH="nim-$branch/bin:$PATH"
 script: nim c --run ./tests/test.nim
+
+cache:
+  directories:
+    - nim-master
+    - nim-devel
+
+branches:
+  except:
+    - gh-pages
