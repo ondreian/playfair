@@ -27,6 +27,7 @@ install:
 
 before_script:
   - ls -a $HOME
+  - ls -a ./
   - nimble install
 script: nim c --run ./tests/test.nim
 
