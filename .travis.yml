@@ -23,7 +23,7 @@ install:
     git clone --depth 1 https://github.com/nim-lang/nimble.git nimble/
     cd nimble
     nim c -r src/nimble install
-    export PATH="~/.nimble/bin:$PATH"
+    export PATH="$PATH:$HOME/.nimble/bin"
     cd ..
 
 before_script:
