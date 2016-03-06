@@ -19,6 +19,7 @@ install:
     bin/nim c koch
     ./koch boot -d:release
     echo 'export PATH="nim-$branch/bin:$PATH' >> ~/.profile
+    source ~/.profile
     cd ..
     git clone https://github.com/nim-lang/nimble.git --depth 1
     cd nimble
@@ -26,6 +27,7 @@ install:
     echo 'export PATH=~/nimble/bin:$PATH' >> ~/.profile
     cd ..
 before_script:
+  - source ~/.profile
   - nimble install
 script: nim c --run ./tests/test.nim
 
