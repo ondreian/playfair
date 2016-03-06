@@ -22,11 +22,11 @@ install:
     cd ..
     git clone --depth 1 https://github.com/nim-lang/nimble.git nimble/
     cd nimble
-    nim c -r src/nimble install
+    nim c -r src/nimble install -y nimble
     cd ..
 
 before_script:
-  - ls -a %HOME
+  - ls -a $HOME
   - nimble install
 script: nim c --run ./tests/test.nim
 
