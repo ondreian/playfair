@@ -19,8 +19,14 @@ install:
     bin/nim c koch
     ./koch boot -d:release
     cd ..
+    git clone https://github.com/nim-lang/nimble.git
+    cd nimble
+    git clone -b v0.13.0 --depth 1 https://github.com/nim-lang/nim vendor/nim
+    nim-$branch/bin c -r src/nimble install
+    cd ..
 before_script:
   - export PATH="nim-$branch/bin:$PATH"
+  - nimble install
 script: nim c --run ./tests/test.nim
 
 cache:
