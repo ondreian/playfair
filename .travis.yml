@@ -35,21 +35,12 @@ install:
     cd ..
     # export nim
     export PATH="nim-$branch/bin:$PATH"
-    
-    if [ ! -x nimble ]; then
-      git clone --depth 1 https://github.com/nim-lang/nimble.git nimble/
-    else
-      # We already have Nimble
-      cd nimble
-      git fetch origin
-      if ! git merge FETCH_HEAD | grep "Already up-to-date"; then
-        # reinstall Nimble from /build
-        cd ..
-        nim c -r nimble/src/nimble install
-      fi
-    fi
+    git clone --depth 1 https://github.com/nim-lang/nimble.git nimble/
+    nim c -r nimble/src/nimble install
 
 before_script:
+  - |
+    nimble refresh <<< y
   - nimble install
 script: nim c --run ./tests/test.nim
 
