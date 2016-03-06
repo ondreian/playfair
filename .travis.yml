@@ -26,6 +26,7 @@ install:
     cd ..
 
 before_script:
+  - which nim
   - ls -a $HOME
   - ls -a ./
   - nimble install
