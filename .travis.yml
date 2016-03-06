@@ -33,13 +33,13 @@ install:
       fi
     fi
     cd ..
+    export PATH="nim-$branch/bin:$PATH"
     git clone --depth 1 https://github.com/nim-lang/nimble.git nimble/
     nim c -r nimble/src/nimble install
-    nimble refresh << EOF
-    y
-    EOF
 
 before_script:
+  - |
+    nimble refresh <<< y
   - nimble install
 script: nim c --run ./tests/test.nim
 
