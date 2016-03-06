@@ -36,7 +36,7 @@ install:
     # export nim
     export PATH="nim-$branch/bin:$PATH"
     git clone --depth 1 https://github.com/nim-lang/nimble.git nimble/
-    nim c -r nimble/src/nimble install
+    nim c -r nimble/src/nimble install <<< y
 
 before_script:
   - nimble install <<< y
