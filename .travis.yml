@@ -1,4 +1,5 @@
 language: c
+dist: trusty
 # Run builds with 2 different values of the `nim_branch` environment variable
 env:
   - nim_branch=master
@@ -24,12 +25,12 @@ before_install:
     sudo apt-get install libpcre3 libpcre3-dev -y
 install:
   - |
-    if [ ! -x nim-$branch/bin/nim ]; then
+    if [ ! -x nim-master/bin/nim ]; then
       # If the Nim executable does not exist (means we haven't installed Nim yet)
       # (do what we did before)
-      git clone -b $branch --depth 1 git://github.com/nim-lang/nim nim-$branch/
-      cd nim-$branch
-      git clone -b $branch --depth 1 git://github.com/nim-lang/csources csources/
+      git clone -b master --depth 1 git://github.com/nim-lang/nim nim-master/
+      cd nim-master
+      git clone -b master --depth 1 git://github.com/nim-lang/csources csources/
       cd csources
       sh build.sh
       cd ..
@@ -38,7 +39,7 @@ install:
       ./koch boot -d:release
     else
       # We already have the repository, go to it
-      cd nim-$branch
+      cd nim-master
       # Download latest commits from the repository
       git fetch origin
       if ! git merge FETCH_HEAD | grep "Already up-to-date"; then
