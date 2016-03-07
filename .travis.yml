@@ -59,7 +59,7 @@ script: nim c --run ./tests/test.nim
 
 cache:
   directories:
-    - nim-$branch
+    - nim-master
     - nim-devel
     - nimble
 
